@@ -12,12 +12,12 @@
 ## Cloud 7 Information
 - **Group**: Cloud 7 (Official P-pop boy group)
 - **Members**: 7 members aged 13-19
-  - Lukas Garcia (Leader)
-  - Johann Nepomuceno
+  - Julijo Lukas Garcia (Leader)
+  - Prince Johann Nepomuceno
   - Kairo Lazarte
   - Egypt Larkin See
-  - Migz Diokno
-  - PJ Yago
+  - Miguel Gabriel "Migz" Diokno
+  - Prince Johan "PJ" Yago
   - Fian Andrei Guevarra
 - **Label**: Sparkle GMA Artist Center
 - **Debut**: August 20, 2023
