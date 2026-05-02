@@ -118,13 +118,14 @@ p {
     border-radius: 50%;
     display: block;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(14, 41, 175, 0.211);
 }
 
 .navbar__title {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-primary-dark);
+    
 }
 
 /* Hamburger Menu */
@@ -507,7 +508,7 @@ p {
     width: auto;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 20px rgba(74, 144, 226, 0.3));
+    filter: drop-shadow(0 4px 16px rgba(36, 120, 216, 0.482)) drop-shadow(0 0 30px rgba(135, 207, 235, 0.499));
 }
 
 /* Cloud 7 Logo (About Page) */
@@ -1119,7 +1120,6 @@ p {
 /* Stats Section */
 .stats-section {
     padding: var(--spacing-2xl) 0;
-    background: rgba(255, 255, 255, 0.7);
 }
 
 .stats-grid {
@@ -1509,7 +1509,7 @@ p {
 .cloud7-page-logo {
     max-height: 280px;
     width: auto;
-    filter: drop-shadow(0 4px 16px rgba(74, 144, 226, 0.35)) drop-shadow(0 0 30px rgba(135, 206, 235, 0.4));
+    filter: drop-shadow(0 4px 16px rgba(36, 120, 216, 0.482)) drop-shadow(0 0 30px rgba(135, 207, 235, 0.499));
 }
 
 .cloud7-hero-image {
@@ -1537,7 +1537,7 @@ p {
 
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-lg);
 }
 
@@ -1931,4 +1931,22 @@ p {
     .cloud7-page-logo {
         max-height: 170px;
     }
+}
+
+/* Custom Ad Wrappers */
+.ad-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-lg) auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ad-desktop { display: block; }
+.ad-mobile { display: none; }
+
+@media (max-width: 768px) {
+    .ad-desktop { display: none; }
+    .ad-mobile { display: block; }
 }
