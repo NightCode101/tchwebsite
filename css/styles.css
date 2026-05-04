@@ -441,9 +441,15 @@ p {
 
 .about__content {
     /* max-width: 700px; */
+    text-align: center;
     margin: 0 auto;
     animation: fadeIn 0.8s ease 0.2s backwards;
     margin-bottom: var(--spacing-2xl);
+}
+
+.about__content h2 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
 }
 
 .about__text {
@@ -814,9 +820,15 @@ p {
 
 /* Values Section */
 .values-section {
+    
+    text-align: center;
     margin-top: var(--spacing-2xl);
     padding-top: var(--spacing-2xl);
     border-top: 2px solid rgba(74, 144, 226, 0.1);
+}
+.values-section h2 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-dark);
 }
 
 .values-grid {
@@ -1491,6 +1503,7 @@ p {
 
 /* Cloud 7 Page */
 .cloud7-hero {
+    text-align: center;
     padding: var(--spacing-2xl) 0;
     background: rgba(255, 255, 255, 0.7);
 }
@@ -1522,6 +1535,13 @@ p {
 .cloud7-hero-info h2 {
     color: var(--color-primary-dark);
     margin-bottom: var(--spacing-lg);
+}
+
+.cloud7-hero-info {
+    max-width: 800px;
+    margin: var(--spacing-2xl) auto 0;
+    padding: 0 var(--spacing-md);
+    text-align: center;
 }
 
 .intro-text {
