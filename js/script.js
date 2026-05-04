@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let frameImage = new Image();
     let userImage = new Image();
     let isUserImageLoaded = false;
+    let frameBackgroundColor = '#87CEEB'; // Default background color for the frame
 
     // Image manipulation state
     let imgScale = 1;
@@ -190,7 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         imgX = centerX - (centerX - imgX) * (newScale / imgScale);
         imgY = centerY - (centerY - imgY) * (newScale / imgScale);
-        
         imgScale = newScale;
         drawCanvas();
     });
@@ -247,20 +247,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Main Draw Function
     function drawCanvas() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // 1. Fill background with primary color
+        ctx.fillStyle = frameBackgroundColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // 1. Draw User Image
+        // 2. Draw User Image
         if (isUserImageLoaded) {
             ctx.drawImage(
-                userImage, 
-                imgX, 
-                imgY, 
-                userImage.width * imgScale, 
+                userImage,
+                imgX,
+                imgY,
+                userImage.width * imgScale,
                 userImage.height * imgScale
             );
         }
 
-        // 2. Draw Frame on top
+        // 3. Draw Frame on top
         if (frameImage.complete && frameImage.naturalWidth !== 0) {
             ctx.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
         }
@@ -269,10 +271,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle Download
     downloadBtn.addEventListener('click', function() {
         if (!isUserImageLoaded) return;
-        
+
         const link = document.createElement('a');
-        link.download = 'CloudHouseOG-DP.png';
-        link.href = canvas.toDataURL('image/png');
+        link.download = 'CloudHouseOG-DP.jpg';
+        link.href = canvas.toDataURL('image/jpg');
         link.click();
+    });
+});
+
+// Rules Modal on Join Page
+document.addEventListener('DOMContentLoaded', function() {
+    const rulesModal = document.getElementById('rulesModal');
+    const rulesCheckbox = document.getElementById('rulesCheckbox');
+    const agreeBtn = document.getElementById('agreeBtn');
+    const gcStatus = document.getElementById('gcStatus');
+
+    if (!rulesModal) return; // Only run on the join page
+
+    // Enable/disable agree button based on checkbox
+    rulesCheckbox.addEventListener('change', function() {
+        agreeBtn.disabled = !this.checked;
+    });
+
+    // Handle agree button click
+    agreeBtn.addEventListener('click', function() {
+        rulesModal.style.display = 'none';
+        if (gcStatus) {
+            gcStatus.style.display = 'block';
+        }
     });
 });
